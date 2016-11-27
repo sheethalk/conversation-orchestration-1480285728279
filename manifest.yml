@@ -1,3 +1,7 @@
+declared-services:
+  conversation-y8:
+    label: conversation
+    plan: free
 applications:
 - path: .
   memory: 256M
@@ -6,3 +10,7 @@ applications:
   name: conversation-orchestration
   host: conversation-orchestration
   disk_quota: 1024M
+  services:
+  - conversation-y8
+  env:
+    NPM_CONFIG_PRODUCTION: false
